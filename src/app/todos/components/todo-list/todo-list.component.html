@@ -1,0 +1,8 @@
+<ul class="todo-list">
+  <ng-container *ngFor="let todo of todos | filterMode:mode; let index=index;">
+    <app-todo-item [todo]="todo" [index]="index"></app-todo-item>
+  </ng-container>
+  <li *ngIf="(mode === 'Active' || mode === 'Completed') && (todos | filterMode:mode)?.length === 0" class="no-matches">
+    No todos here!
+  </li>
+</ul>

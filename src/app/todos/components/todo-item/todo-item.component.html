@@ -1,0 +1,8 @@
+<li [class.completed]="todo.completed" [class.editing]="edit">
+  <div class="view">
+    <input class="toggle" type="checkbox" [attr.checked]="todo.completed" (change)="toggleComplete(index)" />
+    <label (dblclick)="editTodo()">{{todo.text}}</label>
+    <button class="destroy" (click)="removeTodo(index)"></button>
+  </div>
+  <input #editInput *ngIf="edit" class="edit" [value]="todo.text" (blur)="updateTodo($event, index)" (keydown.enter)="updateTodo($event, index)" />
+</li>
