@@ -11,7 +11,7 @@ For this project, I wanted to break down the functions of the TodoMVC applicatio
 
 Ensuring that each component is small and reusable is a critical element of UI design. I learned a lot from reading [Brad Frost's "Atomic Design"](https://atomicdesign.bradfrost.com/chapter-1/) and use his ideas and concepts in breaking down components into their most easily-understood parts.
 
-The tracking of todo statuses is done via services. The `todos.service.ts` uses RxJs Observables to track changes on the front-end, which is then relayed to the `state` of the application, done in NgRx.
+The tracking of todo statuses is done via services. The `todos.service.ts` tracks changes on the front-end, which is then relayed to the `state` of the application, done in NgRx.
 
 [NgRx](https://ngrx.io) allows the application to keep track of unique actions done on the front end, as seen in the `todo.action.ts` file. From there, they can be passed down into `todos.reducer.ts` to transition one state to the next state.
 
